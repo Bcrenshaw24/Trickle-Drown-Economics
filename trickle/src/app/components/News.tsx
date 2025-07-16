@@ -1,8 +1,10 @@
 import React from 'react'
+import InfoCard from './cards/InfoCard'
 
 const News = () => {
   return (
-    <div>
+    <div className='flex w-screen h-screen'>
+      <InfoCard tabName='News'  />
       
     </div>
   )
