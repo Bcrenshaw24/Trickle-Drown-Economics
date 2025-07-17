@@ -1,18 +1,18 @@
 import { url } from 'inspector'
 import React from 'react'
 
-const TeamCard = () => {
+const TeamCard = ({photo, name, effects, req}: {photo: string, name: string, effects: {}, req: string}) => {
     type Card = { 
         photo: string, 
         name: string,
-        title: string, 
-        effects: {[key: string]: string}
+        effects: {[key: string]: string},
+        req: string
     }
     const card: Card = {
-      photo: '/people/Carl.jpg',
-      name: "Carl",
-      title: "Public Reception",
-      effects: {"Blank": "Blank"}
+      photo: photo,
+      name: name,
+      effects: effects,
+      req: req
     }
   return (
     <div className="flex flex-col w-1/5 h-1/4">
@@ -22,7 +22,13 @@ const TeamCard = () => {
             {/* Info */}
             <div className='flex-col w-full'>
                 <div className='text-center flex justify-center'>Name: {card.name}</div>
-                <div className='text-center'>{card.effects["Blank"]}</div>
+                { "Money" in card.effects &&
+                <div className='text-center'>Money: +{card.effects["Money"]}</div> 
+                }
+                { "Popularity" in card.effects &&
+                <div className='text-center'>Popularity: +{card.effects["Popularity"]}</div> 
+                }
+                <div className='text-center mt-3'>Requirements: {card.req}</div>
             </div>
             
          </div>
