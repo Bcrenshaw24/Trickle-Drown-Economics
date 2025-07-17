@@ -1,9 +1,11 @@
 import React from 'react'
+import EventCard from './cards/EventCard'
 
 const Events = () => {
+  const selected = []
   return (
-    <div>
-      
+    <div className='flex w-full h-screen'>
+      <EventCard />
     </div>
   )
 }

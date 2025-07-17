@@ -46,6 +46,7 @@ const Screen = () => {
         ) 
     }
           </div> 
+          {/* Active Tab */}
           <div className='flex-grow overflow-auto w-full'> 
           {tabs[activeView]}
           </div>
