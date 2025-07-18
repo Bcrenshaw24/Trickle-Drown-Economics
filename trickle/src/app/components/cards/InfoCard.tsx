@@ -1,18 +1,18 @@
 import React from 'react'
 
-const InfoCard = ({tabName}: {tabName: string}) => {
+const InfoCard = ({title, description, effects}: {title: string, description: string, effects: {}}) => {
     type Card = {  
         title: string,
         description: string, 
         effects: {}
     }
     const card: Card = {
-      title: "Raise Taxes",
-      description: "You decided to raise the taxes on the state",
-      effects: {"Popularity": -5, "Money": 10000}
+      title: title,
+      description: description,
+      effects: effects
     }
   return (
-    <div className="flex justify-center border-4 border-l-0 border-sky-600 w-1/6 h-1/6">
+    <div className="flex bg-blue-900 justify-center border-4 border-l-0 border-sky-600 w-1/6 h-1/6">
       <div> 
         <div className='flex justify-center border-b-4 border-sky-600'>
           {card.title}
